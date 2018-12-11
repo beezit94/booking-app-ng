@@ -1,0 +1,16 @@
+<a [routerLink]="['/rentals', currentRental._id]">
+  <div class="card bwm-card">
+    <img class="card-img-top" src="{{currentRental.image}}" alt="" />
+    <div class="card-block">
+      <h6 class="card-subtitle {{currentRental.category}}">
+        {{ currentRental.shared ? 'Shared' : 'Whole' }}
+        {{ currentRental.category }} &#183; {{ currentRental.city }}
+      </h6>
+      <h4 class="card-title">{{ currentRental.title }}</h4>
+      <p class="card-text">
+        ${{ currentRental.dailyRate }} per Night &#183; Free Cancelation
+      </p>
+      <a href="#" class="card-link">More Info</a>
+    </div>
+  </div>
+</a>

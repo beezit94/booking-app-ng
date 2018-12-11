@@ -1,0 +1,10 @@
+<div class="container">
+  <section id="rentalListing">
+    <h1 class="page-title">Your Home All Around the World</h1>
+    <div class="row">
+      <div class="col-md-3 col-xs-6" *ngFor="let rental of rentals">
+        <app-rentals-list-item [currentRental]="rental"></app-rentals-list-item>
+      </div>
+    </div>
+  </section>
+</div>
