@@ -10,7 +10,7 @@ import { Rentals } from '../rental.model';
 export class RentalListComponent implements OnInit {
   constructor(private rentalService: RentalService) {}
 
-  rentals: Rentals[] = [];
+  public rentals: Rentals[] = [];
 
   ngOnInit() {
     this.rentalService.getRentals().subscribe((receivedRentals: Rentals[]) => {
