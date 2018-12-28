@@ -30,12 +30,14 @@ app.use('/api/rentals', rentalRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/booking', bookingRoutes);
 
-const appPath = path.join(__dirname, '..', 'dist/BookwithMe');
-app.use(express.static(appPath));
+if (process.env.NODE_ENV === 'production') {
+  const appPath = path.join(__dirname, '..', 'dist/BookwithMe');
+  app.use(express.static(appPath));
 
-app.get('*', function(req, res) {
-  res.sendFile(path.resolve(appPath, 'index.html'));
-});
+  app.get('*', function(req, res) {
+    res.sendFile(path.resolve(appPath, 'index.html'));
+  });
+}
 
 app.listen(config.PORT, () => {
   console.log(`Server started at port ${config.PORT}`);
