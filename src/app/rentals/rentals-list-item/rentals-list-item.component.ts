@@ -6,7 +6,7 @@ import { Rentals } from '../rental.model';
   styleUrls: ['./rentals-list-item.component.scss']
 })
 export class RentalsListItemComponent implements OnInit {
-  @Input() currentRental: Rentals[];
+  @Input() currentRental: Rentals;
   constructor() {}
 
   ngOnInit() {}
