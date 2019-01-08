@@ -20,6 +20,7 @@ import { RentalService } from './shared/rental.service';
 import { HelperService } from '../common/service/helper.service';
 import { BookingService } from '../booking/shared/booking.service';
 import { RentalGuard } from './shared/rental-guard';
+import { ImageUploadModule } from '../common/components/image-upload/image-upload.modeule';
 
 const routes: Routes = [
   {
@@ -67,6 +68,7 @@ const routes: Routes = [
     Daterangepicker,
     FormsModule,
     EditableModule,
+    ImageUploadModule,
     RouterModule.forChild(routes)
   ],
   providers: [
