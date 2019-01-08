@@ -1,7 +1,14 @@
 <section id="rentalDetails" *ngIf="rental">
   <div class="upper-section">
     <div class="row">
-      <div class="col-md-6"><img src="{{ rental.image }}" alt="" /></div>
+      <div class="col-md-6">
+        <app-editable-image
+          [(entity)]="rental"
+          [field]="'image'"
+          (entityUpdated)="updateRental(rental._id, $event)"
+        >
+        </app-editable-image>
+      </div>
       <div class="col-md-6">
         <!-- Will be replaced with map !!!! -->
         <app-map

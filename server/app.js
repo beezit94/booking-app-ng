@@ -8,6 +8,7 @@ const bookingRoutes = require('./routes/booking');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const imageUploadRoutes = require('./routes/image-upload');
 
 const app = express();
 mongoose
@@ -29,6 +30,7 @@ app.use(logger('dev'));
 app.use('/api/rentals', rentalRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/booking', bookingRoutes);
+app.use('/api', imageUploadRoutes);
 
 const appPath = path.join(__dirname, '..', 'dist/BookwithMe');
 app.use(express.static(appPath));
