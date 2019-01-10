@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [{ path: '', redirectTo: 'rentals', pathMatch: 'full' }];
@@ -23,6 +24,7 @@ const routes: Routes = [{ path: '', redirectTo: 'rentals', pathMatch: 'full' }];
     CommonModule,
     BrowserAnimationsModule,
     ManageModule,
+    UserModule,
     NgbModule.forRoot(),
     ToastrModule.forRoot()
   ],

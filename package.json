@@ -52,6 +52,7 @@
     "ngx-pipes": "^2.3.6",
     "ngx-toastr": "^8.10.0",
     "rxjs": "^6.0.0",
+    "stripe": "^6.20.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

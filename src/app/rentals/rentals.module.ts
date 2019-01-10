@@ -21,6 +21,7 @@ import { HelperService } from '../common/service/helper.service';
 import { BookingService } from '../booking/shared/booking.service';
 import { RentalGuard } from './shared/rental-guard';
 import { ImageUploadModule } from '../common/components/image-upload/image-upload.modeule';
+import { PaymentModule } from '../payment/payment.module';
 
 const routes: Routes = [
   {
@@ -68,6 +69,7 @@ const routes: Routes = [
     Daterangepicker,
     FormsModule,
     EditableModule,
+    PaymentModule,
     ImageUploadModule,
     RouterModule.forChild(routes)
   ],

@@ -9,6 +9,7 @@ const bookingSchema = new Schema({
   guests: Number,
   createdAt: { type: Date, default: Date.now },
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  payment: { type: Schema.Types.ObjectId, ref: 'Payment' },
   rental: { type: mongoose.Schema.Types.ObjectId, ref: 'Rental' }
 });
 
