@@ -71,4 +71,8 @@ export class AuthService {
   public getToken(): string {
     return localStorage.getItem('token');
   }
+
+  public getUserId(): string {
+    return this.decodedToken.userId;
+  }
 }

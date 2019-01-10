@@ -5,6 +5,31 @@ var bcryptjs = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var config = require('../config');
 
+module.exports.getUser = function(req, res) {
+  const requestedUserId = req.params.id;
+  const user = res.locals.user;
+
+  if (requestedUserId === user.id) {
+    User.findById(requestedUserId, function(err, foundUser) {
+      if (err) {
+        return res.status(422).send({ errors: normalizeErrors(err.errors) });
+      }
+
+      return res.json(foundUser);
+    });
+  } else {
+    User.findById(requestedUserId)
+      .select('-revenue -stripeCustomerId -password')
+      .exec(function(err, foundUser) {
+        if (err) {
+          return res.status(422).send({ errors: normalizeErrors(err.errors) });
+        }
+
+        return res.json(foundUser);
+      });
+  }
+};
+
 module.exports.login = (req, res) => {
   const { email, password } = req.body;
   let fetchedUser;

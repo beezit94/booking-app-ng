@@ -75,13 +75,20 @@
       Price: <em>{{ newBooking.totalPrice }}$</em>
     </p>
 
+    <app-payment (paymentConfirmed)="onPaymentConfirmed($event)"></app-payment>
+
     <p>Do you confirm booking for selected days?</p>
   </div>
   <div *ngIf="errors.length > 0" class="alert alert-danger modal-error">
     <p *ngFor="let error of errors">{{ error.detail }}</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-bwm " (click)="createBooking()">
+    <button
+      [disabled]="!newBooking.paymentToken"
+      type="button"
+      class="btn btn-bwm "
+      (click)="createBooking()"
+    >
       Confirm
     </button>
     <button type="button" class="btn btn-bwm " (click)="c('Close click')">

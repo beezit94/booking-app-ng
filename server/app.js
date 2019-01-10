@@ -5,6 +5,7 @@ const seed = require('./models/seeDB');
 const rentalRoutes = require('./routes/rentals');
 const userRoutes = require('./routes/user');
 const bookingRoutes = require('./routes/booking');
+const paymentRoutes = require('./routes/payments');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -30,6 +31,7 @@ app.use(logger('dev'));
 app.use('/api/rentals', rentalRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/booking', bookingRoutes);
+app.use('/api/payments', paymentRoutes);
 app.use('/api', imageUploadRoutes);
 
 const appPath = path.join(__dirname, '..', 'dist/BookwithMe');

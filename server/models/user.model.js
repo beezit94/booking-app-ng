@@ -23,6 +23,8 @@ const userSchema = mongoose.Schema({
     min: [4, 'Too short, min is 4 characters'],
     max: [32, 'Too long, max is 32 characters']
   },
+  stripeCustomerId: String,
+  revenue: Number,
   rentals: [
     {
       type: mongoose.Schema.Types.ObjectId,
