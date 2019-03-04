@@ -2,7 +2,7 @@
   "name": "bookwith-me",
   "version": "0.0.0",
   "engines": {
-    "node": "8.11.3",
+    "node": "10.15.1",
     "npm": "6.5.0"
   },
   "scripts": {
